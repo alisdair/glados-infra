@@ -1,9 +1,10 @@
 variable "name" {
-  type = "string"
+  type    = string
   default = "Subject Name Here"
 }
+
 variable "hometown" {
-  type = "string"
+  type    = string
   default = "Subject Hometown Here"
 }
 
@@ -12,11 +13,11 @@ locals {
 }
 
 output "greeting" {
-  value = "${local.greeting}"
+  value = local.greeting
 }
 
 resource "null_resource" "result" {
   triggers = {
-    greeting = "${local.greeting}"
+    greeting = local.greeting
   }
 }
